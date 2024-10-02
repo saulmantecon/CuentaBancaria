@@ -1,3 +1,5 @@
+import model.*;
+
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -14,8 +16,49 @@ public class Main {
 
             switch (opcion){
                 case 1:
+                    System.out.println("Introduce tus datos personales: \n" +
+                            "1.Nombre" );
+                    String nombre = scanner.next();
+                    System.out.println("2. Apellidos:");
+                    String apellidos = scanner.next();
+                    System.out.println("DNI:");
+                    String DNI = scanner.next();
+                    Persona persona = new Persona(nombre,apellidos,DNI);
+                    System.out.println("IBAN:");
+                    String IBAN = scanner.next();
+                    System.out.println("¿Que saldo inicial tendrás?");
+                    double saldo = scanner.nextDouble();
+                    System.out.println("¿Qué tipo de cuenta desea crear? \n" +
+                            "1. Cuenta de Ahorro \n" +
+                            "2.Cuenta Corriente Personal \n" +
+                            "3. Cuenta Corriente de Empresa");
+                    int opcionCuenta = scanner.nextInt();
+                    switch (opcionCuenta){
+                        case 1:
+                            System.out.println("Que tipo de interes tendrás?");
+                            float interes= scanner.nextFloat();
+                            CuentaAhorro cuentaAhorro = new CuentaAhorro(persona,saldo,IBAN,interes);
+                            break;
+                        case 2:
+                            System.out.println("Que entidades están autorizadas para cobrar recibos de la cuenta?");
+                            String entidades = scanner.next();
+                            System.out.println("Cual será la comision de mantenimiento?");
+                            float comisionMantenimiento = scanner.nextFloat();
+                            CuentaCorrientePersonal cuentaCorrientePersonal = new CuentaCorrientePersonal(persona,saldo,IBAN,entidades,comisionMantenimiento);
+                            break;
+                        case 3:
+                            System.out.println("Que entidades están autorizadas para cobrar recibos de la cuenta?");
+                            String entidadesEmpresa = scanner.next();
+                            float interesPorDescubierto= scanner.nextFloat();
+                            float maximoDescubiertoPermitido= scanner.nextFloat();
+                            CuentaCorrienteEmpresa cuentaCorrienteEmpresa = new CuentaCorrienteEmpresa(persona,saldo,IBAN,entidadesEmpresa, interesPorDescubierto,maximoDescubiertoPermitido);
+                            break;
+                        default:
+                            System.out.println("No escogiste una opcion valida");
+                            break;
+                    }//switchOpcionCuenta
 
-            }
+            }//switch Opcion
 
         }while (opcion!=6);
 

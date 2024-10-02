@@ -10,6 +10,11 @@ public class CuentaAhorro extends CuentaBancaria {
         this.interes = interes;
     }
 
+    public CuentaAhorro(Persona titular, double saldo, String IBAN, float interes) {
+        super(titular, saldo, IBAN);
+        this.interes = interes;
+    }
+
     public float getRemuneracion() {
         return remuneracion;
     }

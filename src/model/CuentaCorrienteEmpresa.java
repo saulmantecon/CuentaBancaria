@@ -1,10 +1,11 @@
 package model;
 
-public class CuentaCorrienteEmpresa {
+public class CuentaCorrienteEmpresa extends CuentaCorriente {
     float interesPorDescubierto;
     float maximoDescubiertoPermitido;
 
-    public CuentaCorrienteEmpresa(float interesPorDescubierto, float maximoDescubiertoPermitido) {
+    public CuentaCorrienteEmpresa(Persona titular, double saldo, String IBAN, String entidades, float interesPorDescubierto, float maximoDescubiertoPermitido) {
+        super(titular, saldo, IBAN, entidades);
         this.interesPorDescubierto = interesPorDescubierto;
         this.maximoDescubiertoPermitido = maximoDescubiertoPermitido;
     }
