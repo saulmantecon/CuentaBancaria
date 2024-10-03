@@ -1,15 +1,20 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Banco {
-    public boolean abrirCuenta(CuentaBancaria cuentaBancaria){
-
-    return true;//hay q cambiarlo
+    static ArrayList<CuentaBancaria> listadoDeCuentas = new ArrayList<>();
+    public static boolean abrirCuenta(CuentaBancaria cuentaBancaria){
+        if (listadoDeCuentas.contains(cuentaBancaria)){
+            return false;
+        }else {
+            return true;
+        }
     }
 
-    public ArrayList<CuentaBancaria> listadoCuentas(){
-        return listadoCuentas();//hay q cambiarlo
+    public ArrayList<CuentaBancaria> listarCuentas(){
+        return listadoDeCuentas;//hay q cambiarlo
     }
 
     public void informacionCuenta (String IBAN){

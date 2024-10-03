@@ -38,6 +38,11 @@ public class Main {
                             System.out.println("Que tipo de interes tendrás?");
                             float interes= scanner.nextFloat();
                             CuentaAhorro cuentaAhorro = new CuentaAhorro(persona,saldo,IBAN,interes);
+                            if (Banco.abrirCuenta(cuentaAhorro)){
+                                System.out.println("Cuenta agregada correctamente");
+                            }else{
+                                System.out.println("error al crear la cuenta");
+                            }
                             break;
                         case 2:
                             System.out.println("Que entidades están autorizadas para cobrar recibos de la cuenta?");
@@ -45,6 +50,11 @@ public class Main {
                             System.out.println("Cual será la comision de mantenimiento?");
                             float comisionMantenimiento = scanner.nextFloat();
                             CuentaCorrientePersonal cuentaCorrientePersonal = new CuentaCorrientePersonal(persona,saldo,IBAN,entidades,comisionMantenimiento);
+                            if (Banco.abrirCuenta(cuentaCorrientePersonal)){
+                                System.out.println("Cuenta agregada correctamente");
+                            }else{
+                                System.out.println("error al crear la cuenta");
+                            }
                             break;
                         case 3:
                             System.out.println("Que entidades están autorizadas para cobrar recibos de la cuenta?");
@@ -52,6 +62,11 @@ public class Main {
                             float interesPorDescubierto= scanner.nextFloat();
                             float maximoDescubiertoPermitido= scanner.nextFloat();
                             CuentaCorrienteEmpresa cuentaCorrienteEmpresa = new CuentaCorrienteEmpresa(persona,saldo,IBAN,entidadesEmpresa, interesPorDescubierto,maximoDescubiertoPermitido);
+                            if (Banco.abrirCuenta(cuentaCorrienteEmpresa)){
+                                System.out.println("Cuenta agregada correctamente");
+                            }else{
+                                System.out.println("error al crear la cuenta");
+                            }
                             break;
                         default:
                             System.out.println("No escogiste una opcion valida");
