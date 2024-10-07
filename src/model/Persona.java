@@ -34,4 +34,13 @@ public class Persona {
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", DNI='" + DNI + '\'' +
+                '}';
+    }
 }

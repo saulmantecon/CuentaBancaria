@@ -30,4 +30,12 @@ public class CuentaAhorro extends CuentaBancaria {
     public void setInteres(float interes) {
         this.interes = interes;
     }
+
+    @Override
+    public String toString() {
+        return "CuentaAhorro:" +
+                " titular=" + titular +
+                ", saldo=" + saldo +
+                ", IBAN='" + IBAN + '\'';
+    }
 }

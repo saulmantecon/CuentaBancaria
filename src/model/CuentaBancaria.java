@@ -35,5 +35,12 @@ public abstract class CuentaBancaria {
         this.IBAN = IBAN;
     }
 
-
+    @Override
+    public String toString() {
+        return "CuentaBancaria{" +
+                "titular=" + titular +
+                ", saldo=" + saldo +
+                ", IBAN='" + IBAN + '\'' +
+                '}';
+    }
 }

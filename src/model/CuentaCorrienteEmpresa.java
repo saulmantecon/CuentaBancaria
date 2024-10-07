@@ -25,6 +25,18 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente {
     public void setMaximoDescubiertoPermitido(float maximoDescubiertoPermitido) {
         this.maximoDescubiertoPermitido = maximoDescubiertoPermitido;
     }
+
+    @Override
+    public String toString() {
+        return "CuentaCorrienteEmpresa{" +
+                "maximoDescubiertoPermitido=" + maximoDescubiertoPermitido +
+                ", entidades='" + entidades + '\'' +
+                ", interesPorDescubierto=" + interesPorDescubierto +
+                ", titular=" + titular +
+                ", saldo=" + saldo +
+                ", IBAN='" + IBAN + '\'' +
+                '}';
+    }
 }
 
 
